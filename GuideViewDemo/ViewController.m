@@ -29,13 +29,19 @@
     
     [path appendPath:circlePath1];
     [path appendPath:circlePath2];
+    /*method one*/
+//    CAShapeLayer *layer = [CAShapeLayer layer];
+//    layer.path = path.CGPath;
+//    
+//    backgroundView.layer.mask = layer;
+//    [self.view addSubview:backgroundView];
     
+    /*method two*/
     CAShapeLayer *layer = [CAShapeLayer layer];
     layer.path = path.CGPath;
     
-    backgroundView.layer.mask = layer;
-    
-    [self.view addSubview:backgroundView];
+    layer.fillColor = [UIColor colorWithWhite:0.0 alpha:0.6].CGColor;
+    [self.view.layer addSublayer:layer];
 }
 
 
